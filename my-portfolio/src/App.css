@@ -1386,6 +1386,23 @@ main {
   }
 }
 
+@keyframes emerge-left-mobile {
+  0% {
+    transform: translateX(-50%) translateY(24px) scale(0.2);
+    clip-path: inset(68% 30% 0 30% round 16px);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+    clip-path: inset(50% 20% 0 20% round 16px);
+  }
+  100% {
+    transform: translateX(-96%) translateY(0) scale(1);
+    clip-path: inset(0 0 0 0 round 20px);
+    opacity: 1;
+  }
+}
+
 @keyframes girl-float {
   from {
     transform: translateY(0);
@@ -1585,18 +1602,21 @@ main {
     width: min(300px, 70vw);
     z-index: 1;
     opacity: 1;
-    animation: none;
+    animation:
+      laptop-glow 2.8s ease-in-out infinite alternate,
+      laptop-fade-out 0.85s ease forwards 1.1s;
   }
 
   .speech-cloud {
     position: absolute;
     top: 0;
-    left: 50%;
-    transform: translateX(-4%);
+    right: 0;
+    left: auto;
+    transform: none;
     width: min(300px, 70vw);
     z-index: 4;
-    opacity: 1;
-    animation: none;
+    opacity: 0;
+    animation: cloud-in 0.9s ease forwards 1.8s;
   }
 
   .speech-cloud::before,
@@ -1626,9 +1646,9 @@ main {
     width: min(200px, 50vw);
     transform: translateX(-50%);
     z-index: 3;
-    opacity: 1;
-    clip-path: none;
-    animation: none;
+    opacity: 0;
+    clip-path: inset(66% 28% 0 28% round 16px);
+    animation: emerge-left-mobile 1.7s cubic-bezier(.2,.74,.24,1) both 0.45s;
   }
 
   .girl::before,
@@ -1637,7 +1657,7 @@ main {
   }
 
   .girl-image {
-    animation: none;
+    animation: girl-float 2.2s ease-in-out infinite alternate;
   }
 
   .profile-box {
@@ -1788,7 +1808,7 @@ main {
 
   .speech-cloud {
     width: min(255px, 66vw);
-    transform: translateX(-2%);
+    right: max(0px, 1vw);
   }
 
   .speech-cloud-copy {
@@ -1831,6 +1851,7 @@ main {
 
   .speech-cloud {
     width: min(230px, 62vw);
+    right: 0;
   }
 
   .speech-cloud p {
