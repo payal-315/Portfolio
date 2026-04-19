@@ -1397,7 +1397,7 @@ main {
     clip-path: inset(50% 20% 0 20% round 16px);
   }
   100% {
-    transform: translateX(-96%) translateY(0) scale(1);
+    transform: translateX(-108%) translateY(0) scale(1);
     clip-path: inset(0 0 0 0 round 20px);
     opacity: 1;
   }
@@ -1625,7 +1625,7 @@ main {
   }
 
   .speech-cloud-copy {
-    inset: 15% 11% 25% 24%;
+    inset: 16% 12% 28% 24%;
   }
 
   .speech-cloud p {
@@ -1820,6 +1820,10 @@ main {
     line-height: 1.16;
   }
 
+  .line-c {
+    display: none;
+  }
+
   .girl {
     bottom: 20px;
     width: min(176px, 48vw);
@@ -1827,12 +1831,41 @@ main {
 
   .project-card,
   .project-card-inner {
-    min-height: 372px;
+    min-height: auto;
   }
 
   .research-card-extended,
   .research-card-extended .project-card-inner {
-    min-height: 410px;
+    min-height: auto;
+  }
+
+  .project-card.is-flipped .project-card-inner {
+    transform: none;
+  }
+
+  .project-card-inner {
+    height: auto;
+  }
+
+  .project-front,
+  .project-back {
+    position: relative;
+    inset: auto;
+    min-height: 100%;
+    backface-visibility: visible;
+  }
+
+  .project-back {
+    display: none;
+    transform: none;
+  }
+
+  .project-card.is-flipped .project-front {
+    display: none;
+  }
+
+  .project-card.is-flipped .project-back {
+    display: grid;
   }
 
   .project-actions {
