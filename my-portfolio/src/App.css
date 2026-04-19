@@ -1402,7 +1402,7 @@ main {
     clip-path: inset(50% 20% 0 20% round 16px);
   }
   100% {
-    transform: translateX(-108%) translateY(0) scale(1);
+    transform: translateX(-116%) translateY(0) scale(1);
     clip-path: inset(0 0 0 0 round 20px);
     opacity: 1;
   }
@@ -1626,7 +1626,7 @@ main {
 
   .speech-cloud::before,
   .speech-cloud::after {
-    display: block;
+    display: none;
   }
 
   .speech-cloud::before {
@@ -1858,18 +1858,20 @@ main {
   }
 
   .speech-cloud {
-    width: min(255px, 66vw);
+    width: min(242px, 62vw);
     right: max(0px, 1vw);
   }
 
   .speech-cloud::before {
-    left: -20px;
-    top: 132px;
+    display: block;
+    left: -17px;
+    top: 124px;
+    width: 10px;
+    height: 10px;
   }
 
   .speech-cloud::after {
-    left: -6px;
-    top: 118px;
+    display: none;
   }
 
   .speech-cloud-copy {
@@ -1891,13 +1893,11 @@ main {
   }
 
   .girl::after {
-    right: -2px;
-    width: 12px;
-    height: 7px;
+    display: none;
   }
 
   .girl::before {
-    right: -14px;
+    right: -11px;
     width: 8px;
     height: 8px;
   }
@@ -1931,12 +1931,12 @@ main {
   }
 
   .speech-cloud {
-    width: min(230px, 62vw);
+    width: min(220px, 58vw);
     right: 0;
   }
 
   .speech-cloud::before {
-    top: 118px;
+    top: 112px;
   }
 
   .speech-cloud::after {
