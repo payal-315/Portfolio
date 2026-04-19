@@ -1665,9 +1665,9 @@ main {
     top: auto;
     left: auto;
     width: min(94vw, 560px);
-    transform: none;
-    opacity: 1;
-    animation: none;
+    transform: translateY(14px);
+    opacity: 0;
+    animation: fade-in-up 0.7s ease forwards 2.45s;
     padding: 18px 16px 16px;
   }
 
