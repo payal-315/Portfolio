@@ -5,37 +5,39 @@ function HomePage() {
   return (
     <header id="home" className="hero-section">
       <div className="scene">
-        <div className="laptop" aria-hidden="true">
-          <div className="screen"></div>
-          <div className="camera"></div>
-          <div className="base"></div>
-        </div>
+        <div className="hero-illustration">
+          <div className="laptop" aria-hidden="true">
+            <div className="screen"></div>
+            <div className="camera"></div>
+            <div className="base"></div>
+          </div>
 
-        <div className="girl" aria-hidden="true">
-          <img src={girlImage} className="girl-image" alt="" />
-        </div>
+          <div className="girl" aria-hidden="true">
+            <img src={girlImage} className="girl-image" alt="" />
+          </div>
 
-        <div className="speech-cloud" role="status" aria-live="polite">
-          <img
-            src={speechCloudImage}
-            className="speech-cloud-image"
-            alt=""
-            aria-hidden="true"
-          />
-          <div className="speech-cloud-copy">
-            <p>
-              <span className="line-a">
-                Hi, I&apos;m <b className="hero-name">Payal Kumari</b>...
-              </span>
-              <span className="line-b">
-                <b>Building, Securing, &amp; Optimizing.</b>
-              </span>
-              <span className="line-c">
-                From MERN Stack applications to
-                <br />
-                Adversarial Machine Learning.
-              </span>
-            </p>
+          <div className="speech-cloud" role="status" aria-live="polite">
+            <img
+              src={speechCloudImage}
+              className="speech-cloud-image"
+              alt=""
+              aria-hidden="true"
+            />
+            <div className="speech-cloud-copy">
+              <p>
+                <span className="line-a">
+                  Hi, I&apos;m <b className="hero-name">Payal Kumari</b>...
+                </span>
+                <span className="line-b">
+                  <b>Building, Securing, &amp; Optimizing.</b>
+                </span>
+                <span className="line-c">
+                  From MERN Stack applications to
+                  <br />
+                  Adversarial Machine Learning.
+                </span>
+              </p>
+            </div>
           </div>
         </div>
 
