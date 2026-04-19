@@ -649,23 +649,27 @@ main {
 
 .project-card {
   min-height: 320px;
+  min-height: var(--project-card-height, 320px);
   perspective: 1000px;
 }
 
 .research-card-extended {
   min-height: 360px;
+  min-height: var(--project-card-height, 360px);
 }
 
 .project-card-inner {
   position: relative;
   width: 100%;
   min-height: 320px;
+  min-height: var(--project-card-height, 320px);
   transform-style: preserve-3d;
   transition: transform 0.5s ease;
 }
 
 .research-card-extended .project-card-inner {
   min-height: 360px;
+  min-height: var(--project-card-height, 360px);
 }
 
 .project-card.is-flipped .project-card-inner {
@@ -1622,7 +1626,21 @@ main {
 
   .speech-cloud::before,
   .speech-cloud::after {
-    display: none;
+    display: block;
+  }
+
+  .speech-cloud::before {
+    width: 14px;
+    height: 14px;
+    left: -24px;
+    top: 156px;
+  }
+
+  .speech-cloud::after {
+    width: 22px;
+    height: 22px;
+    left: -8px;
+    top: 140px;
   }
 
   .speech-cloud-copy {
@@ -1654,11 +1672,25 @@ main {
 
   .girl::before,
   .girl::after {
-    display: none;
+    display: block;
+  }
+
+  .girl::after {
+    top: 31.8%;
+    right: -3px;
+    width: 14px;
+    height: 8px;
+  }
+
+  .girl::before {
+    top: 34%;
+    right: -17px;
+    width: 10px;
+    height: 10px;
   }
 
   .girl-image {
-    animation: girl-float 2.2s ease-in-out infinite alternate;
+    animation: none;
   }
 
   .profile-box {
@@ -1830,6 +1862,16 @@ main {
     right: max(0px, 1vw);
   }
 
+  .speech-cloud::before {
+    left: -20px;
+    top: 132px;
+  }
+
+  .speech-cloud::after {
+    left: -6px;
+    top: 118px;
+  }
+
   .speech-cloud-copy {
     inset: 15% 11% 25% 24%;
   }
@@ -1848,43 +1890,30 @@ main {
     width: min(176px, 48vw);
   }
 
+  .girl::after {
+    right: -2px;
+    width: 12px;
+    height: 7px;
+  }
+
+  .girl::before {
+    right: -14px;
+    width: 8px;
+    height: 8px;
+  }
+
   .project-card,
   .project-card-inner {
-    min-height: auto;
+    min-height: var(--project-card-height, 372px);
   }
 
   .research-card-extended,
   .research-card-extended .project-card-inner {
-    min-height: auto;
-  }
-
-  .project-card.is-flipped .project-card-inner {
-    transform: none;
+    min-height: var(--project-card-height, 410px);
   }
 
   .project-card-inner {
-    height: auto;
-  }
-
-  .project-front,
-  .project-back {
-    position: relative;
-    inset: auto;
-    min-height: 100%;
-    backface-visibility: visible;
-  }
-
-  .project-back {
-    display: none;
-    transform: none;
-  }
-
-  .project-card.is-flipped .project-front {
-    display: none;
-  }
-
-  .project-card.is-flipped .project-back {
-    display: grid;
+    height: var(--project-card-height, auto);
   }
 
   .project-actions {
@@ -1904,6 +1933,14 @@ main {
   .speech-cloud {
     width: min(230px, 62vw);
     right: 0;
+  }
+
+  .speech-cloud::before {
+    top: 118px;
+  }
+
+  .speech-cloud::after {
+    top: 104px;
   }
 
   .speech-cloud p {
