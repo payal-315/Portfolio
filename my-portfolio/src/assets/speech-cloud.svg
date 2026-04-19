@@ -1,0 +1,27 @@
+<svg width="980" height="620" viewBox="0 0 980 620" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="cloudFill" x1="240" y1="55" x2="770" y2="460" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#ECF3FF"/>
+    </linearGradient>
+    <linearGradient id="tailFill" x1="82" y1="344" x2="232" y2="510" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#EEF4FF"/>
+    </linearGradient>
+    <filter id="softShadow" x="18" y="18" width="944" height="584" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="16" stdDeviation="16" flood-color="#000000" flood-opacity="0.18"/>
+    </filter>
+  </defs>
+
+  <g filter="url(#softShadow)">
+    <circle cx="336" cy="164" r="108" fill="url(#cloudFill)"/>
+    <circle cx="560" cy="124" r="132" fill="url(#cloudFill)"/>
+    <circle cx="756" cy="190" r="94" fill="url(#cloudFill)"/>
+    <ellipse cx="548" cy="286" rx="358" ry="166" fill="url(#cloudFill)"/>
+    <ellipse cx="548" cy="356" rx="298" ry="124" fill="url(#cloudFill)"/>
+
+    <circle cx="176" cy="344" r="28" fill="url(#tailFill)"/>
+    <circle cx="130" cy="392" r="20" fill="url(#tailFill)"/>
+    <circle cx="88" cy="432" r="14" fill="url(#tailFill)"/>
+  </g>
+</svg>

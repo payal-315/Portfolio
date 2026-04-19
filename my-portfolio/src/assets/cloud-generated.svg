@@ -1,0 +1,27 @@
+<svg width="980" height="620" viewBox="0 0 980 620" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="cloudBody" x1="210" y1="62" x2="760" y2="470" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#EEF4FF"/>
+    </linearGradient>
+    <linearGradient id="cloudTail" x1="82" y1="332" x2="226" y2="494" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#F1F6FF"/>
+    </linearGradient>
+    <filter id="cloudShadow" x="12" y="18" width="948" height="586" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="16" stdDeviation="16" flood-color="#000000" flood-opacity="0.18"/>
+    </filter>
+  </defs>
+
+  <g filter="url(#cloudShadow)">
+    <circle cx="338" cy="182" r="110" fill="url(#cloudBody)"/>
+    <circle cx="560" cy="132" r="136" fill="url(#cloudBody)"/>
+    <circle cx="760" cy="194" r="96" fill="url(#cloudBody)"/>
+    <ellipse cx="550" cy="296" rx="354" ry="178" fill="url(#cloudBody)"/>
+    <ellipse cx="548" cy="372" rx="286" ry="108" fill="url(#cloudBody)"/>
+
+    <circle cx="176" cy="346" r="28" fill="url(#cloudTail)"/>
+    <circle cx="130" cy="392" r="20" fill="url(#cloudTail)"/>
+    <circle cx="88" cy="434" r="14" fill="url(#cloudTail)"/>
+  </g>
+</svg>
