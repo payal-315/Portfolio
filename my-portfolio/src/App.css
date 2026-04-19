@@ -1754,6 +1754,7 @@ main {
     height: auto;
     padding: 20px 16px 0;
     background:
+      radial-gradient(circle at 50% 88%, rgba(109, 146, 219, 0.16), transparent 34%),
       radial-gradient(circle at 28% 14%, rgba(126, 185, 255, 0.22), transparent 42%),
       linear-gradient(160deg, #14161f, #0e1018);
   }
@@ -1771,15 +1772,17 @@ main {
     clip-path: inset(2% 0 14% 0);
     -webkit-mask-image:
       linear-gradient(to right, transparent 0, black 12%, black 88%, transparent 100%),
-      linear-gradient(to top, transparent 0, black 18%, black 100%);
+      linear-gradient(to top, transparent 0, black 26%, black 100%);
     mask-image:
       linear-gradient(to right, transparent 0, black 12%, black 88%, transparent 100%),
-      linear-gradient(to top, transparent 0, black 18%, black 100%);
-    opacity: 0.9;
+      linear-gradient(to top, transparent 0, black 26%, black 100%);
+    opacity: 0.82;
+    mix-blend-mode: screen;
     filter:
       drop-shadow(0 16px 22px rgba(0, 0, 0, 0.34))
       drop-shadow(0 0 18px rgba(138, 188, 255, 0.16))
-      brightness(1.04);
+      brightness(1.06)
+      saturate(0.96);
   }
 
   .about-content {

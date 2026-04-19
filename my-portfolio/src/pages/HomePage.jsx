@@ -26,7 +26,7 @@ function HomePage() {
             <div className="speech-cloud-copy">
               <p>
                 <span className="line-a">
-                  Hi, I&apos;m <b className="hero-name">Payal Kumari</b>...
+                  Hi, I&apos;m <b className="hero-name">Payal Kumari</b>
                 </span>
                 <span className="line-b">
                   <b>Building, Securing, &amp; Optimizing.</b>
