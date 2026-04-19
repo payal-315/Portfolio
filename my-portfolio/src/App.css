@@ -683,6 +683,11 @@ main {
   text-align: left;
 }
 
+.project-front {
+  display: flex;
+  flex-direction: column;
+}
+
 .project-back {
   transform: rotateY(180deg);
   display: grid;
@@ -788,6 +793,7 @@ main {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
+  margin-top: auto;
 }
 
 .project-ai .project-front,
@@ -1696,7 +1702,17 @@ main {
 
   .project-card,
   .project-card-inner {
-    min-height: 290px;
+    min-height: 340px;
+  }
+
+  .research-card-extended,
+  .research-card-extended .project-card-inner {
+    min-height: 380px;
+  }
+
+  .project-actions {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .contact-footer-card {
@@ -1787,6 +1803,20 @@ main {
   .girl {
     bottom: 20px;
     width: min(176px, 48vw);
+  }
+
+  .project-card,
+  .project-card-inner {
+    min-height: 372px;
+  }
+
+  .research-card-extended,
+  .research-card-extended .project-card-inner {
+    min-height: 410px;
+  }
+
+  .project-actions {
+    grid-template-columns: 1fr;
   }
 }
 
