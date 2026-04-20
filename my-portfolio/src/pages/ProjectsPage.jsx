@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 const liveProjects = [
   {
@@ -78,6 +78,56 @@ const researchProjects = [
 
 function ProjectsPage() {
   const [flippedCard, setFlippedCard] = useState(null)
+  const cardRefs = useRef({})
+
+  useEffect(() => {
+    const updateCardHeights = () => {
+      Object.values(cardRefs.current).forEach((entry) => {
+        if (!entry?.card || !entry?.front || !entry?.back) {
+          return
+        }
+
+        const frontHeight = entry.front.scrollHeight
+        const backHeight = entry.back.scrollHeight
+        entry.card.style.setProperty('--project-card-height', `${Math.max(frontHeight, backHeight)}px`)
+      })
+    }
+
+    updateCardHeights()
+    window.addEventListener('resize', updateCardHeights)
+
+    return () => {
+      window.removeEventListener('resize', updateCardHeights)
+    }
+  }, [])
+
+  useEffect(() => {
+    const frameId = window.requestAnimationFrame(() => {
+      Object.values(cardRefs.current).forEach((entry) => {
+        if (!entry?.card || !entry?.front || !entry?.back) {
+          return
+        }
+
+        const frontHeight = entry.front.scrollHeight
+        const backHeight = entry.back.scrollHeight
+        entry.card.style.setProperty('--project-card-height', `${Math.max(frontHeight, backHeight)}px`)
+      })
+    })
+
+    return () => {
+      window.cancelAnimationFrame(frameId)
+    }
+  }, [flippedCard])
+
+  const registerCardPart = (key, part) => (node) => {
+    if (!cardRefs.current[key]) {
+      cardRefs.current[key] = {}
+    }
+
+    if (node) {
+      cardRefs.current[key][part] = node
+    }
+  }
 
   return (
     <main className="projects-page">
@@ -95,9 +145,10 @@ function ProjectsPage() {
             key={project.key}
             className={`project-card project-${project.type} ${flippedCard === project.key ? 'is-flipped' : ''}`}
             aria-label={project.title}
+            ref={registerCardPart(project.key, 'card')}
           >
             <div className="project-card-inner">
-              <div className="project-front">
+              <div className="project-front" ref={registerCardPart(project.key, 'front')}>
                 <span className={`status-badge status-${project.status.toLowerCase()}`}>
                   {project.status}
                 </span>
@@ -142,7 +193,7 @@ function ProjectsPage() {
                   </button>
                 </div>
               </div>
-              <div className="project-back">
+              <div className="project-back" ref={registerCardPart(project.key, 'back')}>
                 <h3>Technical Challenge</h3>
                 <p>{project.challenge}</p>
                 <button className="details-btn" onClick={() => setFlippedCard(null)}>
@@ -159,9 +210,10 @@ function ProjectsPage() {
           <article
             key={project.key}
             className={`project-card research-card-extended project-${project.type} ${flippedCard === project.key ? 'is-flipped' : ''}`}
+            ref={registerCardPart(project.key, 'card')}
           >
             <div className="project-card-inner">
-              <div className="project-front">
+              <div className="project-front" ref={registerCardPart(project.key, 'front')}>
                 <header>
                   <span className={`status-badge status-${project.status.toLowerCase()}`}>
                     {project.status}
@@ -200,7 +252,7 @@ function ProjectsPage() {
                   </button>
                 </div>
               </div>
-              <div className="project-back">
+              <div className="project-back" ref={registerCardPart(project.key, 'back')}>
                 <h3>Technical Challenge</h3>
                 <p>{project.challenge}</p>
                 <div className="visual-note">{project.visual}</div>

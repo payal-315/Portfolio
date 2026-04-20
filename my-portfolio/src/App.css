@@ -648,28 +648,28 @@ main {
 }
 
 .project-card {
-  min-height: 320px;
-  min-height: var(--project-card-height, 320px);
+  min-height: 340px;
+  min-height: var(--project-card-height, 340px);
   perspective: 1000px;
 }
 
 .research-card-extended {
-  min-height: 360px;
-  min-height: var(--project-card-height, 360px);
+  min-height: 380px;
+  min-height: var(--project-card-height, 380px);
 }
 
 .project-card-inner {
   position: relative;
   width: 100%;
-  min-height: 320px;
-  min-height: var(--project-card-height, 320px);
+  min-height: 340px;
+  min-height: var(--project-card-height, 340px);
   transform-style: preserve-3d;
   transition: transform 0.5s ease;
 }
 
 .research-card-extended .project-card-inner {
-  min-height: 360px;
-  min-height: var(--project-card-height, 360px);
+  min-height: 380px;
+  min-height: var(--project-card-height, 380px);
 }
 
 .project-card.is-flipped .project-card-inner {
@@ -1374,6 +1374,25 @@ main {
   }
 }
 
+@media (hover: none) and (pointer: coarse) and (min-width: 900px) {
+  .speech-cloud {
+    width: min(620px, 56vw);
+    left: clamp(320px, 38vw, 452px);
+  }
+
+  .speech-cloud::before {
+    display: none;
+  }
+
+  .speech-cloud::after {
+    display: block;
+    width: 32px;
+    height: 32px;
+    left: -34px;
+    top: 226px;
+  }
+}
+
 @keyframes emerge-left {
   0% {
     transform: translateX(-50%) translateY(30px) scale(0.18);
@@ -1904,12 +1923,12 @@ main {
 
   .project-card,
   .project-card-inner {
-    min-height: var(--project-card-height, 372px);
+    min-height: var(--project-card-height, 404px);
   }
 
   .research-card-extended,
   .research-card-extended .project-card-inner {
-    min-height: var(--project-card-height, 410px);
+    min-height: var(--project-card-height, 442px);
   }
 
   .project-card-inner {
