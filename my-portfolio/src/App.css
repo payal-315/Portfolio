@@ -266,7 +266,22 @@
     0 0 0 1px rgba(199, 214, 244, 0.62),
     0 8px 14px rgba(0, 0, 0, 0.14);
   pointer-events: none;
-  display: none;
+}
+
+.speech-cloud::before {
+  width: 18px;
+  height: 18px;
+  left: -65px;
+  top: 225px;
+  animation: cloud-tail-small 3.4s ease-in-out infinite 2.6s;
+}
+
+.speech-cloud::after {
+  width: 28px;
+  height: 28px;
+  left: -35px;
+  top: 209px;
+  animation: cloud-tail-large 4s ease-in-out infinite 2.35s;
 }
 
 .speech-cloud-image {
@@ -634,27 +649,27 @@ main {
 
 .project-card {
   min-height: 340px;
-  min-height: calc(var(--project-card-height, 340px) + 8px);
+  min-height: calc(var(--project-card-height, 340px) + 4px);
   perspective: 1000px;
 }
 
 .research-card-extended {
   min-height: 380px;
-  min-height: calc(var(--project-card-height, 380px) + 8px);
+  min-height: calc(var(--project-card-height, 380px) + 4px);
 }
 
 .project-card-inner {
   position: relative;
   width: 100%;
   min-height: 340px;
-  min-height: calc(var(--project-card-height, 340px) + 8px);
+  min-height: calc(var(--project-card-height, 340px) + 4px);
   transform-style: preserve-3d;
   transition: transform 0.5s ease;
 }
 
 .research-card-extended .project-card-inner {
   min-height: 380px;
-  min-height: calc(var(--project-card-height, 380px) + 8px);
+  min-height: calc(var(--project-card-height, 380px) + 4px);
 }
 
 .project-card.is-flipped .project-card-inner {
@@ -780,6 +795,7 @@ main {
   display: inline-flex;
   width: fit-content;
   max-width: 100%;
+  min-width: 104px;
   flex: 0 0 auto;
   align-items: center;
   justify-content: center;
@@ -789,7 +805,7 @@ main {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  margin-top: 8px;
+  margin-top: 6px;
   align-items: flex-start;
 }
 
@@ -1898,12 +1914,12 @@ main {
 
   .project-card,
   .project-card-inner {
-    min-height: calc(var(--project-card-height, 404px) + 8px);
+    min-height: calc(var(--project-card-height, 404px) + 4px);
   }
 
   .research-card-extended,
   .research-card-extended .project-card-inner {
-    min-height: calc(var(--project-card-height, 442px) + 8px);
+    min-height: calc(var(--project-card-height, 442px) + 4px);
   }
 
   .project-card-inner {
@@ -1962,6 +1978,7 @@ main {
 
   .project-actions .details-btn {
     width: fit-content;
+    min-width: 92px;
     justify-content: center;
   }
 
