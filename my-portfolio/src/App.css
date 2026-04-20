@@ -649,27 +649,27 @@ main {
 
 .project-card {
   min-height: 340px;
-  min-height: var(--project-card-height, 340px);
+  min-height: calc(var(--project-card-height, 340px) + 20px);
   perspective: 1000px;
 }
 
 .research-card-extended {
   min-height: 380px;
-  min-height: var(--project-card-height, 380px);
+  min-height: calc(var(--project-card-height, 380px) + 20px);
 }
 
 .project-card-inner {
   position: relative;
   width: 100%;
   min-height: 340px;
-  min-height: var(--project-card-height, 340px);
+  min-height: calc(var(--project-card-height, 340px) + 20px);
   transform-style: preserve-3d;
   transition: transform 0.5s ease;
 }
 
 .research-card-extended .project-card-inner {
   min-height: 380px;
-  min-height: var(--project-card-height, 380px);
+  min-height: calc(var(--project-card-height, 380px) + 20px);
 }
 
 .project-card.is-flipped .project-card-inner {
@@ -713,6 +713,8 @@ main {
 
 .status-badge {
   display: inline-block;
+  width: fit-content;
+  max-width: fit-content;
   margin-bottom: 8px;
   font-size: 0.76rem;
   letter-spacing: 0.04em;
@@ -790,6 +792,9 @@ main {
   cursor: pointer;
   text-decoration: none;
   display: inline-flex;
+  width: fit-content;
+  max-width: 100%;
+  flex: 0 0 auto;
   align-items: center;
   justify-content: center;
 }
@@ -1374,25 +1379,6 @@ main {
   }
 }
 
-@media (hover: none) and (pointer: coarse) and (min-width: 900px) {
-  .speech-cloud {
-    width: min(620px, 56vw);
-    left: clamp(320px, 38vw, 452px);
-  }
-
-  .speech-cloud::before {
-    display: none;
-  }
-
-  .speech-cloud::after {
-    display: block;
-    width: 32px;
-    height: 32px;
-    left: -34px;
-    top: 226px;
-  }
-}
-
 @keyframes emerge-left {
   0% {
     transform: translateX(-50%) translateY(30px) scale(0.18);
@@ -1923,20 +1909,26 @@ main {
 
   .project-card,
   .project-card-inner {
-    min-height: var(--project-card-height, 404px);
+    min-height: calc(var(--project-card-height, 404px) + 16px);
   }
 
   .research-card-extended,
   .research-card-extended .project-card-inner {
-    min-height: var(--project-card-height, 442px);
+    min-height: calc(var(--project-card-height, 442px) + 16px);
   }
 
   .project-card-inner {
     height: var(--project-card-height, auto);
   }
 
+  .project-actions .details-btn {
+    width: fit-content;
+    justify-self: start;
+  }
+
   .project-actions {
     grid-template-columns: 1fr;
+    justify-items: start;
   }
 }
 
@@ -1983,9 +1975,39 @@ main {
     justify-content: center;
   }
 
+  .project-actions .details-btn {
+    width: fit-content;
+    justify-content: center;
+  }
+
   .project-actions {
     display: grid;
     grid-template-columns: 1fr;
+    justify-items: start;
+  }
+}
+
+@media (hover: none) and (pointer: coarse) and (min-width: 641px) {
+  .speech-cloud {
+    width: min(620px, 56vw) !important;
+    left: clamp(320px, 38vw, 452px) !important;
+    right: auto !important;
+  }
+
+  .speech-cloud::before {
+    display: none !important;
+  }
+
+  .speech-cloud::after {
+    display: block !important;
+    width: 32px !important;
+    height: 32px !important;
+    left: -34px !important;
+    top: 226px !important;
+  }
+
+  .line-c {
+    display: none !important;
   }
 }
 
