@@ -793,9 +793,8 @@ main {
   cursor: pointer;
   text-decoration: none;
   display: inline-flex;
-  width: fit-content;
+  width: 112px;
   max-width: 100%;
-  min-width: 104px;
   flex: 0 0 auto;
   align-items: center;
   justify-content: center;
@@ -1977,8 +1976,7 @@ main {
   }
 
   .project-actions .details-btn {
-    width: fit-content;
-    min-width: 92px;
+    width: 104px;
     justify-content: center;
   }
 
