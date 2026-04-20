@@ -1975,11 +1975,6 @@ main {
     justify-content: center;
   }
 
-  .project-actions .details-btn {
-    width: 104px;
-    justify-content: center;
-  }
-
   .project-actions {
     display: flex;
     flex-wrap: wrap;
