@@ -790,6 +790,8 @@ main {
   padding: 8px 12px;
   background: linear-gradient(155deg, rgba(95, 132, 211, 0.36), rgba(56, 73, 120, 0.42));
   color: #eef3ff;
+  font: inherit;
+  line-height: 1.2;
   cursor: pointer;
   text-decoration: none;
   display: inline-flex;
